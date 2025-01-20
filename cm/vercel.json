@@ -1,4 +1,11 @@
 {
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.tsx",
+        "use": "@vercel/next"
+      }
+    ],
     "rewrites": [
       {
         "source": "/(.*)",
@@ -6,3 +13,4 @@
       }
     ]
   }
+  
