@@ -26,7 +26,7 @@ export const SignUpForm: React.FC<SignUpFormProps> = ({ onSignUp, setIsSignUp })
 
     // Send the signup request to the backend
     try {
-      const response = await fetch('https://crm-45qv6043b-anees-projects-4d79b850.vercel.app/auth/signup', {
+      const response = await fetch('https://crm-eight-pied.vercel.app/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password }),

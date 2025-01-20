@@ -24,7 +24,7 @@ const LeadComponent: React.FC = () => {
     // Fetch leads from the backend API
     const fetchLeads = async () => {
       try {
-        const response = await axios.get('https://crm-45qv6043b-anees-projects-4d79b850.vercel.app/api/leads'); // Adjust URL if needed
+        const response = await axios.get('https://crm-eight-pied.vercel.app/api/leads'); // Adjust URL if needed
         setLeads(response.data);
         setLoading(false);
       } catch (error) {

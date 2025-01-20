@@ -34,7 +34,7 @@ export const Meeting: React.FC = () => {
 
   // Fetch data from the backend
   useEffect(() => {
-    axios.get("https://crm-45qv6043b-anees-projects-4d79b850.vercel.app/api/meetings")
+    axios.get("https://crm-eight-pied.vercel.app/api/meetings")
       .then((response) => {
         // Sort the data by 'from' date in descending order
         const sortedData = response.data.sort((a: TableRow, b: TableRow) => new Date(b.from).getTime() - new Date(a.from).getTime());
@@ -53,7 +53,7 @@ export const Meeting: React.FC = () => {
 
   // Add a new row
   const addRow = () => {
-    axios.post("https://crm-45qv6043b-anees-projects-4d79b850.vercel.app/api/meetings", newRow)
+    axios.post("https://crm-eight-pied.vercel.app/api/meetings", newRow)
       .then((response) => {
         setTableData([response.data, ...tableData]); // Add the new row at the top
         setNewRow({
@@ -73,7 +73,7 @@ export const Meeting: React.FC = () => {
 
   // Delete a row
   const deleteRow = (id: string) => {
-    axios.delete(`https://crm-45qv6043b-anees-projects-4d79b850.vercel.app/api/meetings/${id}`)
+    axios.delete(`https://crm-eight-pied.vercel.app/api/meetings/${id}`)
       .then(() => {
         setTableData(tableData.filter(row => row._id !== id));
       })

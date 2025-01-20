@@ -22,7 +22,7 @@ const ContactList: React.FC = () => {
     // Fetch contacts from the backend
     const fetchContacts = async () => {
       try {
-        const response = await axios.get('https://crm-45qv6043b-anees-projects-4d79b850.vercel.app/api/contacts');
+        const response = await axios.get('https://crm-eight-pied.vercel.app/api/contacts');
         setContacts(response.data); // Set the contacts in state
       } catch (err) {
         setError('Error fetching contacts');

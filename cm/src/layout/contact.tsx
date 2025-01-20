@@ -28,7 +28,7 @@ export const Contact = () => {
     // Fetch contacts from the API
     const fetchContacts = async () => {
       try {
-        const response = await axios.get('https://crm-45qv6043b-anees-projects-4d79b850.vercel.app/api/contacts');
+        const response = await axios.get('https://crm-eight-pied.vercel.app/api/contacts');
         const sortedData = response.data.sort(
           (a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime() // Sort by most recent
         );
@@ -50,7 +50,7 @@ export const Contact = () => {
     e.preventDefault();
     if (newContact.contactName && newContact.accountName && newContact.email && newContact.phone && newContact.owner) {
       try {
-        const response = await axios.post('https://crm-45qv6043b-anees-projects-4d79b850.vercel.app/api/contacts', newContact);
+        const response = await axios.post('https://crm-eight-pied.vercel.app/api/contacts', newContact);
         setContacts([response.data, ...contacts]); // Add the new contact at the top
         setNewContact({
           contactName: '',
@@ -67,7 +67,7 @@ export const Contact = () => {
 
   const handleDeleteContact = async (id: string) => {
     try {
-      await axios.delete(`https://crm-45qv6043b-anees-projects-4d79b850.vercel.app/api/contacts/${id}`);
+      await axios.delete(`https://crm-eight-pied.vercel.app/api/contacts/${id}`);
       setContacts(contacts.filter((contact) => contact._id !== id));
     } catch (err) {
       setError('Error deleting contact');

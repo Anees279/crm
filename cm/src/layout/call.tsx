@@ -40,7 +40,7 @@ export const Call: React.FC = () => {
   useEffect(() => {
     console.log("Fetching call data...");
     axios
-      .get("https://crm-45qv6043b-anees-projects-4d79b850.vercel.app/api/calls")
+      .get("https://crm-eight-pied.vercel.app/api/calls")
       .then((response) => {
         console.log("Fetched data successfully", response.data);
 
@@ -70,7 +70,7 @@ export const Call: React.FC = () => {
 
   const addRow = () => {
     axios
-      .post("https://crm-45qv6043b-anees-projects-4d79b850.vercel.app/api/calls", newRow)
+      .post("https://crm-eight-pied.vercel.app/api/calls", newRow)
       .then((response) => {
         console.log("Added new row successfully", response.data);
         setTableData([response.data, ...tableData]); // Add new row at the start
@@ -93,7 +93,7 @@ export const Call: React.FC = () => {
 
   const deleteRow = (id: string) => {
     axios
-      .delete(`https://crm-45qv6043b-anees-projects-4d79b850.vercel.app/api/calls/${id}`)
+      .delete(`https://crm-eight-pied.vercel.app/api/calls/${id}`)
       .then(() => {
         console.log(`Deleted row with id: ${id}`);
         setTableData(tableData.filter((row) => row._id !== id));
