@@ -3,13 +3,13 @@
     "builds": [
       {
         "src": "index.tsx",
-        "use": "@vercel/next"
+        "use": "@vercel/node"
       }
     ],
-    "rewrites": [
+    "routes": [
       {
-        "source": "/(.*)",
-        "destination": "/index.html"
+        "src": "/(.*)",
+        "dest": "/index.tsx"
       }
     ]
   }
